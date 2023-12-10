@@ -6,7 +6,7 @@ SRCDIR:=theories
 SOURCES:=$(shell find $(SRCDIR) -name '*.v')
 MCOQ:=Makefile.coq
 
-all: $(MCOQ)
+all install: $(MCOQ)
 	+$(MAKE) -f $< $@
 
 clean: $(MCOQ)
@@ -19,5 +19,3 @@ $(MCOQ): _CoqProject
 
 _CoqProject: $(SRCDIR) Makefile
 	echo '-Q $(SRCDIR) Array' > $@
-
-install: ;
